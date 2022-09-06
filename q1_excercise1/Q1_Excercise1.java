@@ -16,17 +16,40 @@ public class Q1_Excercise1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String name = "John Brandon C. Julian";
-        System.out.println("Hi, my name is " + name + ", nice to meet you.");
+        int penOnePrice = 5;
+        int penTwoPrice = 15;
+        int penThreePrice = 5;
         
-        int num = 3;
-        double decimal = 4.5;
-        char letter = 'a';
-        String word = "word";
+        String penOneColor = "Red";
+        String penTwoColor = "Black";
+        String penThreeColor = "Blue";
         
-        num %= 2;
-        System.out.println(num);
-        System.out.println();
+        String penOneBrand = "HBW";
+        String penTwoBrand = "Bic";
+        String penThreeBrand = "HBW";
+        
+        int totalPrice = penOnePrice + penTwoPrice + penThreePrice;
+        
+        System.out.println("Pen 1");
+        System.out.println("Price: " + penOnePrice);
+        System.out.println("Color: " + penOneColor);
+        System.out.println("Brand: " + penOneBrand + "\n");
+
+        System.out.println("Pen 2");
+        System.out.println("Price: " + penTwoPrice);
+        System.out.println("Color: " + penTwoColor);
+        System.out.println("Brand: " + penTwoBrand + "\n");
+        
+        System.out.println("Pen 3");
+        System.out.println("Price: " + penThreePrice);
+        System.out.println("Color: " + penThreeColor);
+        System.out.println("Brand: " + penThreeBrand + "\n");
+        
+        System.out.println("Total price of all pens: " + totalPrice);
+        System.out.print("Pen 2 is more expensive than Pen 1: ");
+        System.out.println(penTwoPrice > penOnePrice);
+        System.out.print("Pen 1 and Pen 3 have the same brand: ");
+        System.out.println(penOneBrand == penThreeBrand);
     }
     
 }
