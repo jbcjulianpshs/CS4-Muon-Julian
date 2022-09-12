@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ex02.muon.ex02muonjulian;
+package ex02muonjulian;
 
 /**
  *
@@ -25,7 +25,7 @@ public class Ex02MuonJulian {
         
         
         
-        while(endApp = false){ 
+        while(endApp == false){ 
             System.out.println("Welcome to Higher or Lower! What will you do?");
             System.out.println("-Start game");
             System.out.println("-Change settings");
@@ -35,17 +35,21 @@ public class Ex02MuonJulian {
         
             switch(whatDo){
                 case "Start game":
-                    String playAgain = "n";
+                    char playAgain = 'n';
                     do{
-                    playAgain = "n";
+                    playAgain = 'n';
                     int random = (int) Math.floor(Math.random()*(upperLimit - lowerLimit)) + lowerLimit;
                     int guessTruthValue = 0;
                      for(int guessesLeft = guesses; guessesLeft > 0; guessesLeft = guessesLeft - 1){
-                         System.out.print("You have " + guessesLeft + " guess(es). What is your guess?");
+                         System.out.print("You have " + guessesLeft + " guess(es) left. What is your guess?");
                          int guess = sc.nextInt();
                          if(guess == random){
                              guessesLeft = 0;
                              guessTruthValue = 1;
+                         }else if(guess > random){
+                             System.out.print("Guess lower!");
+                         }else if(guess < random){
+                             System.out.print("Guess higher!");
                          }
                      
                      }
@@ -59,8 +63,8 @@ public class Ex02MuonJulian {
                     }
                      
                      System.out.print("Play again (y/n)?");
-                     playAgain = sc.nextLine();
-                    }while(playAgain.equalsIgnoreCase("y"));
+                     playAgain = sc.next().charAt(0);
+                    }while(playAgain == 'y');
                     break;
                 case "Change settings":
                     System.out.print("What is the lower limit of the random number?");
@@ -83,7 +87,7 @@ public class Ex02MuonJulian {
             
             }
         }
-        System.out.println("");
+        System.out.println("Thank you for playing!");
         
         }
         
