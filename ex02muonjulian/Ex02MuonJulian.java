@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ex02.muon.julian;
+package ex02.muon.ex02muonjulian;
 
 /**
  *
@@ -18,27 +18,71 @@ public class Ex02MuonJulian {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        do{System.out.println("Welcome to Higher or Lower! What will you do?");
-        System.out.println("-Start game");
-        System.out.println("-Change settings");
-        System.out.println("-End application");
+        boolean endApp = false;
+        int lowerLimit = 0;
+        int upperLimit = 10;
+        int guesses = 3;
         
-        String whatDo = sc.nextLine();
         
-        switch(whatDo){
-            case "Start game":
-                
-                break;
-            case "Change settings":
+        
+        while(endApp = false){ 
+            System.out.println("Welcome to Higher or Lower! What will you do?");
+            System.out.println("-Start game");
+            System.out.println("-Change settings");
+            System.out.println("-End application");
+        
+            String whatDo = sc.nextLine();
+        
+            switch(whatDo){
+                case "Start game":
+                    String playAgain = "n";
+                    do{
+                    playAgain = "n";
+                    int random = (int) Math.floor(Math.random()*(upperLimit - lowerLimit)) + lowerLimit;
+                    int guessTruthValue = 0;
+                     for(int guessesLeft = guesses; guessesLeft > 0; guessesLeft = guessesLeft - 1){
+                         System.out.print("You have " + guessesLeft + " guess(es). What is your guess?");
+                         int guess = sc.nextInt();
+                         if(guess == random){
+                             guessesLeft = 0;
+                             guessTruthValue = 1;
+                         }
+                     
+                     }
+                     switch(guessTruthValue){
+                        case 0:
+                            System.out.println("You lost...");
+                            break;
+                        case 1:
+                            System.out.println("You got it!");
+                            break;
+                    }
+                     
+                     System.out.print("Play again (y/n)?");
+                     playAgain = sc.nextLine();
+                    }while(playAgain == "y");
+                    break;
+                case "Change settings":
+                    System.out.print("What is the lower limit of the random number?");
+                    lowerLimit = sc.nextInt();
+                    
+                    System.out.print("What is the upper limit of the random number?");
+                    upperLimit = sc.nextInt();
+                    
+                    System.out.print("How many guesses are allowed?");
+                    guesses = sc.nextInt();
+                    
+                    System.out.println("Lower limit: " + lowerLimit);
+                    System.out.println("Upper limit: " + upperLimit);
+                    System.out.println("Guesses: " + guesses);
+                    break;
+                case "End application":
+                    endApp = true;
+                    break;
+                default:
             
-                break;
-            case "End application":
-                
-                break;
-            default:
-            
+            }
         }
-        }while();
         System.out.println("");
         
         }
