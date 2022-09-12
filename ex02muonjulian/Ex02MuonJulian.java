@@ -60,7 +60,7 @@ public class Ex02MuonJulian {
                      
                      System.out.print("Play again (y/n)?");
                      playAgain = sc.nextLine();
-                    }while(playAgain == "y");
+                    }while(playAgain.equalsIgnoreCase("y"));
                     break;
                 case "Change settings":
                     System.out.print("What is the lower limit of the random number?");
