@@ -42,7 +42,7 @@ public class Ex02MuonJulian {
                     int guessTruthValue = 0;
                      for(int guessesLeft = guesses; guessesLeft > 0; guessesLeft = guessesLeft - 1){
                          System.out.print("You have " + guessesLeft + " guess(es) left. What is your guess?");
-                         int guess = sc.nextInt();
+                         int guess = Integer.parseInt(sc.nextLine());
                          if(guess == random){
                              guessesLeft = 0;
                              guessTruthValue = 1;
@@ -64,17 +64,18 @@ public class Ex02MuonJulian {
                      
                      System.out.print("Play again (y/n)?");
                      playAgain = sc.next().charAt(0);
+                     sc.nextLine();
                     }while(playAgain == 'y');
                     break;
                 case "Change settings":
                     System.out.print("What is the lower limit of the random number?");
-                    lowerLimit = sc.nextInt();
+                    lowerLimit = Integer.parseInt(sc.nextLine());
                     
                     System.out.print("What is the upper limit of the random number?");
-                    upperLimit = sc.nextInt();
+                    upperLimit = Integer.parseInt(sc.nextLine());
                     
                     System.out.print("How many guesses are allowed?");
-                    guesses = sc.nextInt();
+                    guesses = Integer.parseInt(sc.nextLine());
                     
                     System.out.println("Lower limit: " + lowerLimit);
                     System.out.println("Upper limit: " + upperLimit);
