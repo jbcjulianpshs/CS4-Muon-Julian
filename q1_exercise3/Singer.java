@@ -55,7 +55,7 @@ public class Singer {
     }
     
     public void performForAudience(int n){
-        noOfPerformances = noOfPerformances + n;
+        noOfPerformances++;
         earnings = earnings + (100*n);
     }
     
