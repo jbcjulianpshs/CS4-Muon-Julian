@@ -50,5 +50,6 @@ public class StoreSim {
 
     // Check final earnings
     Store.printStats();
+    Item.printAllItems();
   }
 }
