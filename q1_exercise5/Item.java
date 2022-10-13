@@ -27,7 +27,10 @@ public class Item {
   }
   public static void printAllItems(){
     for(Item i : completeItemList){
-      System.out.printf("Name: %s%nType: %s%nCost:%.2f%n");
+      System.out.println("Name: " + i.getName());
+      System.out.println("Type: " + i.getType());
+      System.out.println("Cost: " + i.getCost());
+      System.out.println("---------");
     }
   }
 }
