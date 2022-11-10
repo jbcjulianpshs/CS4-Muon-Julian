@@ -20,6 +20,7 @@ public class WaterType extends Monster{
     
     @Override
     public void special(){
+        super.special();
         def += 2;
         hp -= maxHP*0.10;
     }
