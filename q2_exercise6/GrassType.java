@@ -24,6 +24,7 @@ public class GrassType extends Monster{
     
     @Override
     public void special (){
+        super.special();
         hp += maxHP*0.20;
     }
 }
