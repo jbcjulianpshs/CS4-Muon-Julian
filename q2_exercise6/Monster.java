@@ -80,4 +80,22 @@ public class Monster {
         if(hp > maxHP) hp = maxHP;
         System.out.println(name + " rested. It's health is now " + hp + ".");
     }
+    
+    public static void deathDuel(Monster x, Monster y){
+        boolean death = false;
+        
+        do{
+            if(x.hp > 0 || y.hp > 0){
+                x.attack(y);
+            }
+            
+            if(x.hp > 0 || y.hp > 0){
+                y.attack(x);
+            }
+            
+            if(x.hp <= 0 || y.hp <= 0){
+                death = true;
+            }
+        }while(death == false);
+    }
 }
