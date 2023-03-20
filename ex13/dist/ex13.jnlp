@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ex13.jnlp">
+  <information>
+    <title>ex13</title>
+    <vendor>MUON</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ex13.jar" size="22231" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="ex13.Ex13"  name="ex13" />
+  <update check="always"/>
+</jnlp>
